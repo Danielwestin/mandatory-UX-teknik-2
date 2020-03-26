@@ -1,0 +1,15 @@
+@import './components/main/main.scss';
+@import './components/about/About.scss';
+@import './components/stats/stats.scss';
+@import './components/sidebar/sidebar.scss';
+@import './components/header/header.scss';
+@import './components/quiz/Quiz.scss';
+
+#root {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}

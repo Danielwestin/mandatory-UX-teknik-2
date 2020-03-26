@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
+import Header from './components/header/Header';
+import Sidebar from './components/sidebar/Sidebar';
+import About from './components/about/About';
+import Stats from './components/stats/Stats';
+import Main from './components/main/Main';
+import Quiz from './components/quiz/Quiz';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	console.log('app');
+
+	return (
+		<Router>
+			<Header />
+
+			<Route exact path="/" component={Main} />
+			<Route path="/about" component={About} />
+			<Route path="/stats" component={Stats} />
+			<Route path="/quiz" component={Quiz} />
+		</Router>
+	);
 }
 
 export default App;
