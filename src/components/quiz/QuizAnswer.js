@@ -1,10 +1,18 @@
 import React from 'react';
 
-export default function QuizAnswer({ answer, name }) {
+export default function QuizAnswer({ answer, name, checked, setChoice }) {
 	return (
 		<li>
-			<input type="radio" name={name} />
-			{answer}
+			<label htmlFor={answer}>
+				<input
+					id={answer}
+					type="radio"
+					name={name}
+					checked={checked || false}
+					onChange={() => setChoice(answer)}
+				/>
+				{answer}
+			</label>
 		</li>
 	);
 }

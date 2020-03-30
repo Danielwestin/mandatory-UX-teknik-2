@@ -1,9 +1,52 @@
-nav {
-	width: 15vw;
-	height: 100vh;
-	background-color: lightgray;
-	position: absolute;
-	top: 0;
-	left: 0;
-	transition: all 0.5s ease-in-out;
+.Sidebar {
+	.Sidebar__background {
+		backdrop-filter: blur(3px);
+		background-color: rgba(0, 0, 0, 0.4);
+		position: absolute;
+		height: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		box-sizing: border-box;
+
+		&__button {
+			outline: 10px solid orange;
+			transform: translateX(-15vw) translateZ(0);
+		}
+	}
+	nav {
+		width: 15vw;
+		height: 100%;
+		background-color: #bcaaa4;
+		position: absolute;
+		top: 0;
+		left: -15vw;
+		border-right: 1px solid #8c7b75;
+		box-shadow: 22px 0px 44px 2px rgba(0, 0, 0, 0.40);
+		animation: slide 0.5s ease forwards;
+
+		.Sidebar__ul {
+			background-color: red;
+			height: 33%;
+
+			.Sidebar__li {
+				display: inline-block;
+				height: 20%;
+				border-bottom: solid 1px gray;
+				background-color: green;
+			}
+		}
+	}
+}
+
+@keyframes slide {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		transform: translatex(15vw) translateZ(0);
+		opacity: 1;
+	}
 }

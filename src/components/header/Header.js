@@ -7,7 +7,9 @@ export default function Header() {
 
 	return (
 		<React.Fragment>
-			{openSidebar && <Sidebar closeSidebar={setOpenSidebar} />}
+			{openSidebar && (
+				<Sidebar closeSidebar={setOpenSidebar} isOpen={openSidebar} />
+			)}
 			<header className="Header">
 				<button
 					className="Header__menu-icon"

@@ -1,5 +1,23 @@
-.quizScreen {
-	width: 400px;
-	padding: 20px;
-	background-color: lightgray;
+.Quiz {
+	width: 100vw;
+	height: 94vh;
+	background-color: whitesmoke;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__wrapper {
+		width: 500px;
+		height: 300px;
+		overflow: hidden;
+	}
+
+	&__section {
+		display: flex;
+	}
+}
+
+.QuizQuestion {
+	min-width: 500px;
+	min-height: 300px;
 }

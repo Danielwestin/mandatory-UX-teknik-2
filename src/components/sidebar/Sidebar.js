@@ -2,29 +2,70 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
+import FocusTrap from 'focus-trap-react';
 
-export default function sidebar({ closeSidebar }) {
+export default function Sidebar({ closeSidebar, isOpen }) {
 	return ReactDOM.createPortal(
-		<nav>
-			<button
-				onClick={() => {
-					closeSidebar(false);
-				}}
-			>
-				<CloseIcon />
-			</button>
-			<ul>
-				<li>
-					<Link to="/"> Main </Link>
-				</li>
-				<li>
-					<Link to="/stats">Stats</Link>
-				</li>
-				<li>
-					<Link to="/about">About</Link>
-				</li>
-			</ul>
-		</nav>,
+		<FocusTrap active={isOpen}>
+			<div className="Sidebar">
+				{isOpen && (
+					<label
+						onClick={() => {
+							closeSidebar(false);
+						}}
+						className="Sidebar__background"
+					>
+						<button
+							aria-label="Close menu"
+							className="Sidebar__background__button"
+						/>
+					</label>
+				)}
+				<nav>
+					<button
+						onClick={() => {
+							closeSidebar(false);
+						}}
+					>
+						<CloseIcon />
+					</button>
+					<ul className="Sidebar__ul">
+						<li className="Sidebar__li">
+							<Link
+								to="/"
+								onClick={() => {
+									closeSidebar(false);
+								}}
+							>
+								Main
+							</Link>
+						</li>
+
+						<li className="Sidebar__li">
+							<Link
+								to="/stats"
+								onClick={() => {
+									closeSidebar(false);
+								}}
+							>
+								Stats
+							</Link>
+						</li>
+
+						<li className="Sidebar__li">
+							<Link
+								to="/about"
+								onClick={() => {
+									closeSidebar(false);
+								}}
+							>
+								About
+							</Link>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</FocusTrap>,
 		document.querySelector('body')
 	);
 }

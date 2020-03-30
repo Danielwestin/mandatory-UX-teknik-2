@@ -2,7 +2,6 @@ import React from 'react';
 import './App.scss';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/header/Header';
-import Sidebar from './components/sidebar/Sidebar';
 import About from './components/about/About';
 import Stats from './components/stats/Stats';
 import Main from './components/main/Main';
@@ -14,7 +13,6 @@ function App() {
 	return (
 		<Router>
 			<Header />
-
 			<Route exact path="/" component={Main} />
 			<Route path="/about" component={About} />
 			<Route path="/stats" component={Stats} />
