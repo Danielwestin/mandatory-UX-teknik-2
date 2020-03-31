@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 .Main {
 	width: 100vw;
 	height: 94vh;
@@ -17,8 +18,27 @@
 		transform: translateY(-100px);
 	}
 
+	a {
+		outline: none;
+	}
+
 	&__button {
-		width: 100px;
-		height: 50px;
+		width: 250px;
+		height: 125px;
+		border-radius: 4px;
+		font-size: 22px;
+		font-weight: bold;
+		font-family: 'Rubik', sans-serif;
+		outline: none;
+		border: none;
+		background-color: #8c7b75;
+
+		&:focus {
+			outline: 2px solid orange;
+		}
+
+		&:hover {
+			background-color: #bcaaa4;
+		}
 	}
 }

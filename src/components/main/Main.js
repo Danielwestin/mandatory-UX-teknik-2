@@ -6,7 +6,6 @@ export default function Main() {
 		<React.Fragment>
 			<main className="Main">
 				<div className="Main__link">
-					<h1>Start</h1>
 					<Link to="/quiz">
 						<button className="Main__button">Start Quiz</button>
 					</Link>

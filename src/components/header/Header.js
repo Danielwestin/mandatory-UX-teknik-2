@@ -17,7 +17,7 @@ export default function Header() {
 				>
 					<MenuIcon />
 				</button>
-				<h1>Quiz</h1>
+				<h1>Trivia</h1>
 			</header>
 		</React.Fragment>
 	);

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import QuizAnswer from './QuizAnswer';
-import FocusTrap from 'focus-trap-react';
 
-export default function QuizQuestion({ question, setScore, active }) {
+export default function QuizQuestion({ question, setScore, disabled }) {
 	const [ choice, setChoice ] = useState(null);
 
 	function submit() {
@@ -16,26 +15,30 @@ export default function QuizQuestion({ question, setScore, active }) {
 	}
 
 	return (
-		<div className="QuizQuestion">
+		<section className="QuizQuestion">
 			<h3>{question.question}</h3>
-			<FocusTrap active={active}>
-				<form onSubmit={(e) => e.preventDefault()}>
-					<ul>
-						{question.answers.map((answer) => (
-							<QuizAnswer
-								setChoice={setChoice}
-								checked={choice === answer && true}
-								key={answer}
-								answer={answer}
-								name={question.question}
-							/>
-						))}
-					</ul>
-					<button type="submit" onClick={() => submit()}>
-						Next
-					</button>
-				</form>
-			</FocusTrap>
-		</div>
+
+			<form onSubmit={(e) => e.preventDefault()}>
+				<ul>
+					{question.answers.map((answer) => (
+						<QuizAnswer
+							setChoice={setChoice}
+							checked={choice === answer && true}
+							key={answer}
+							answer={answer}
+							name={question.question}
+							disabled={disabled}
+						/>
+					))}
+				</ul>
+				<button
+					type="submit"
+					onClick={() => submit()}
+					disabled={disabled}
+				>
+					Next
+				</button>
+			</form>
+		</section>
 	);
 }

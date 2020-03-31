@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
 import FocusTrap from 'focus-trap-react';
+import { slideIn, slideOut } from '../Utilities/animation';
 
 export default function Sidebar({ closeSidebar, isOpen }) {
+	const sidebarRef = useRef(null);
+
+	useEffect(() => {
+		slideIn(sidebarRef.current);
+	}, []);
+
 	return ReactDOM.createPortal(
 		<FocusTrap active={isOpen}>
-			<div className="Sidebar">
+			<aside className="Sidebar">
 				{isOpen && (
 					<label
 						onClick={() => {
-							closeSidebar(false);
+							slideOut(sidebarRef.current, () => {
+								closeSidebar(false);
+							});
 						}}
 						className="Sidebar__background"
 					>
@@ -21,50 +30,69 @@ export default function Sidebar({ closeSidebar, isOpen }) {
 						/>
 					</label>
 				)}
-				<nav>
-					<button
-						onClick={() => {
-							closeSidebar(false);
-						}}
-					>
-						<CloseIcon />
-					</button>
+				<nav className="nav" ref={sidebarRef}>
+					<div className="nav__closeWrapper">
+						<button
+							className="nav__closeWrapper__button"
+							onClick={() => {
+								slideOut(sidebarRef.current, () => {
+									closeSidebar(false);
+								});
+							}}
+						>
+							<CloseIcon />
+						</button>
+					</div>
+
 					<ul className="Sidebar__ul">
 						<li className="Sidebar__li">
-							<Link
+							<NavLink
+								exact
+								className="Sidebar__li__Link"
+								activeClassName="Sidebar__li__Link--active"
 								to="/"
 								onClick={() => {
-									closeSidebar(false);
+									slideOut(sidebarRef.current, () => {
+										closeSidebar(false);
+									});
 								}}
 							>
 								Main
-							</Link>
+							</NavLink>
 						</li>
 
 						<li className="Sidebar__li">
-							<Link
+							<NavLink
+								className="Sidebar__li__Link"
+								activeClassName="Sidebar__li__Link--active"
 								to="/stats"
 								onClick={() => {
-									closeSidebar(false);
+									slideOut(sidebarRef.current, () => {
+										closeSidebar(false);
+									});
 								}}
 							>
 								Stats
-							</Link>
+							</NavLink>
 						</li>
 
 						<li className="Sidebar__li">
-							<Link
+							<NavLink
+								className="Sidebar__li__Link"
+								activeClassName="Sidebar__li__Link--active"
 								to="/about"
 								onClick={() => {
-									closeSidebar(false);
+									slideOut(sidebarRef.current, () => {
+										closeSidebar(false);
+									});
 								}}
 							>
 								About
-							</Link>
+							</NavLink>
 						</li>
 					</ul>
 				</nav>
-			</div>
+			</aside>
 		</FocusTrap>,
 		document.querySelector('body')
 	);

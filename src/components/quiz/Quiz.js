@@ -9,6 +9,7 @@ import {
 import { fetch } from '../Utilities/import';
 import QuizQuestion from './QuizQuestion';
 import { showQuestion } from '../Utilities/animation';
+import QuizComplete from './QuizComplete';
 
 export default function Quiz() {
 	const [ state, dispatch ] = useReducer(reducer, initialState);
@@ -26,7 +27,6 @@ export default function Quiz() {
 		},
 		[ state.questionIndex ]
 	);
-	console.log(state.questionIndex, state.trappedQuestion);
 
 	return (
 		<main className="Quiz">
@@ -34,8 +34,8 @@ export default function Quiz() {
 				<section className="Quiz__section" ref={quizQuestionRef}>
 					{state.questions.map((question, index) => (
 						<QuizQuestion
-							active={
-								state.questionIndex === index ? true : false
+							disabled={
+								state.questionIndex === index ? false : true
 							}
 							setScore={(score) => {
 								dispatch(setScore(score));
@@ -44,6 +44,12 @@ export default function Quiz() {
 							question={question}
 						/>
 					))}
+					{state.gameOver && (
+						<QuizComplete
+							score={state.score}
+							questions={state.questions}
+						/>
+					)}
 				</section>
 			</div>
 		</main>
