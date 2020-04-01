@@ -16,7 +16,7 @@ export default function QuizQuestion({ question, setScore, disabled }) {
 
 	return (
 		<section className="QuizQuestion">
-			<h3>{question.question}</h3>
+			<p className="QuizQuestion__question">{question.question}</p>
 
 			<form onSubmit={(e) => e.preventDefault()}>
 				<ul>

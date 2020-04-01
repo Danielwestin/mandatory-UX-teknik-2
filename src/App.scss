@@ -4,6 +4,7 @@
 @import './components/sidebar/sidebar.scss';
 @import './components/header/header.scss';
 @import './components/quiz/Quiz.scss';
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 body {
 	margin: 0;
@@ -22,4 +23,9 @@ ul {
 
 li {
 	list-style: none;
+}
+
+p,
+label {
+	font-family: 'Raleway', sans-serif;
 }

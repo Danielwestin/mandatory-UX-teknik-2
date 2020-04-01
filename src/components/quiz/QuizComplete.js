@@ -6,9 +6,9 @@ export default function QuizComplete({ score, questions }) {
 	const quizCompleteRef = useRef(null);
 	return (
 		<section className="QuizComplete" ref={quizCompleteRef}>
-			<h1>sup</h1>
+			<h1>Congratulations!</h1>
 			<p>
-				{score}/{questions.length}
+				You answered {score}/{questions.length} questions correct!
 			</p>
 			<Link to="/">
 				<button
