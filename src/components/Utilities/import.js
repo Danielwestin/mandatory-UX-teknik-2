@@ -3,7 +3,7 @@ import axios from 'axios';
 export function fetch() {
 	return axios
 		.get(
-			'https://opentdb.com/api.php?amount=1&category=28&difficulty=medium&type=multiple'
+			'https://opentdb.com/api.php?amount=5&category=28&difficulty=medium&type=multiple'
 		)
 		.then((response) => {
 			return format(response.data.results);

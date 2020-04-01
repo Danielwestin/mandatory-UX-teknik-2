@@ -12,11 +12,12 @@ export default function QuizComplete({ score, questions }) {
 			</p>
 			<Link to="/">
 				<button
+					className="QuizComplete__button"
 					onClick={() => {
 						throwCompleteCard(quizCompleteRef.current);
 					}}
 				>
-					Play Again
+					Close
 				</button>
 			</Link>
 		</section>

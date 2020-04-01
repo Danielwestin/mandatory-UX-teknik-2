@@ -39,6 +39,7 @@ export default function Stats() {
 				<p>Your Average: {stats.average}%</p>
 				<p>Games Played: {stats.gamesPlayed}</p>
 				<button
+					className="Stats__button"
 					onClick={() => {
 						resetStats();
 					}}

@@ -1,12 +1,9 @@
 import gsap from 'gsap';
 
 export function showQuestion(node, index, func) {
-	console.log(node);
-
 	if (!node.children.length || index >= node.children.length - 1) return;
 
 	const children = Array.from(node.children);
-	console.log(children);
 
 	const current = children[index];
 	const next = children[index + 1];

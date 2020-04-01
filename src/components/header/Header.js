@@ -12,6 +12,7 @@ export default function Header() {
 			)}
 			<header className="Header">
 				<button
+					aria-label="open-menu"
 					className="Header__menu-icon"
 					onClick={() => setOpenSidebar(true)}
 				>

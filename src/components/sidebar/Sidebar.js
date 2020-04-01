@@ -31,7 +31,10 @@ export default function Sidebar({ closeSidebar, isOpen }) {
 					</label>
 				)}
 				<nav className="nav" ref={sidebarRef}>
-					<div className="nav__closeWrapper">
+					<div
+						className="nav__closeWrapper"
+						aia-label="to wrapp the closeButton"
+					>
 						<button
 							className="nav__closeWrapper__button"
 							onClick={() => {
@@ -39,6 +42,7 @@ export default function Sidebar({ closeSidebar, isOpen }) {
 									closeSidebar(false);
 								});
 							}}
+							aria-label="Close menu"
 						>
 							<CloseIcon />
 						</button>

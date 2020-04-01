@@ -8,8 +8,6 @@ import Main from './components/main/Main';
 import Quiz from './components/quiz/Quiz';
 
 function App() {
-	console.log('app');
-
 	return (
 		<Router>
 			<Header />

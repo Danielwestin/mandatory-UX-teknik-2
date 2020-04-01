@@ -32,6 +32,7 @@ export default function QuizQuestion({ question, setScore, disabled }) {
 					))}
 				</ul>
 				<button
+					className="QuizQuestion__button"
 					type="submit"
 					onClick={() => submit()}
 					disabled={disabled}

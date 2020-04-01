@@ -8,16 +8,19 @@ export default function QuizAnswer({
 	disabled
 }) {
 	return (
-		<li>
+		<li className="QuizAnswer">
 			<label htmlFor={answer}>
-				<input
-					id={answer}
-					type="radio"
-					name={name}
-					checked={checked || false}
-					onChange={() => setChoice(answer)}
-					disabled={disabled}
-				/>
+				<div className="radioButton" aria-label="Radiobutton">
+					<input
+						id={answer}
+						type="radio"
+						name={name}
+						checked={checked || false}
+						onChange={() => setChoice(answer)}
+						disabled={disabled}
+					/>
+					<div className="radioButton__fake" />
+				</div>
 				{answer}
 			</label>
 		</li>
