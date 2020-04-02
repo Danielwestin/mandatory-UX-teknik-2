@@ -22,20 +22,21 @@
 	min-height: 300px;
 
 	&__question {
+		font-size: 18px;
 		font-weight: bold;
 	}
 
 	&__button {
 		margin-left: 2px;
 		margin-top: 10px;
-		width: 40px;
-		height: 20px;
+		width: 64px;
+		height: 36px;
 		background-color: #bcaaa6;
 		outline: none;
 		border: none;
 		border-radius: 5px;
 		font-family: 'Rubik', sans-serif;
-		font-size: 12px;
+		font-size: 14px;
 		color: black;
 		transition: all .2s ease;
 
@@ -105,8 +106,8 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 20px;
-		height: 20px;
+		width: 24px;
+		height: 24px;
 		border: solid 1px lightgray;
 		border-radius: 50%;
 

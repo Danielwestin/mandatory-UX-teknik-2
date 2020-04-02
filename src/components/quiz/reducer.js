@@ -32,7 +32,7 @@ export function reducer(state, action) {
 			return {
 				...state,
 				questions: action.payload,
-				loading: true
+				loading: false
 			};
 		case 'score':
 			if (state.gameOver) return state;
