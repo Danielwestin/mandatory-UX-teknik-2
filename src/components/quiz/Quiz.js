@@ -10,6 +10,7 @@ import { fetch } from '../Utilities/import';
 import QuizQuestion from './QuizQuestion';
 import { showQuestion } from '../Utilities/animation';
 import QuizComplete from './QuizComplete';
+import Loading from '../loading/Loading';
 
 export default function Quiz() {
 	const [ state, dispatch ] = useReducer(reducer, initialState);
@@ -30,28 +31,32 @@ export default function Quiz() {
 
 	return (
 		<main className="Quiz">
-			<div className="Quiz__wrapper">
-				<section className="Quiz__section" ref={quizQuestionRef}>
-					{state.questions.map((question, index) => (
-						<QuizQuestion
-							disabled={
-								state.questionIndex === index ? false : true
-							}
-							setScore={(score) => {
-								dispatch(setScore(score));
-							}}
-							key={question.question}
-							question={question}
-						/>
-					))}
-					{state.gameOver && (
-						<QuizComplete
-							score={state.score}
-							questions={state.questions}
-						/>
-					)}
-				</section>
-			</div>
+			{state.loading ? (
+				<Loading />
+			) : (
+				<div className="Quiz__wrapper">
+					<section className="Quiz__section" ref={quizQuestionRef}>
+						{state.questions.map((question, index) => (
+							<QuizQuestion
+								disabled={
+									state.questionIndex === index ? false : true
+								}
+								setScore={(score) => {
+									dispatch(setScore(score));
+								}}
+								key={question.question}
+								question={question}
+							/>
+						))}
+						{state.gameOver && (
+							<QuizComplete
+								score={state.score}
+								questions={state.questions}
+							/>
+						)}
+					</section>
+				</div>
+			)}
 		</main>
 	);
 }

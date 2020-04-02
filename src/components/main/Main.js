@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { bringMainButton } from '../Utilities/animation';
 
 export default function Main() {
+	useEffect(() => {
+		bringMainButton();
+	}, []);
+
 	return (
 		<React.Fragment>
 			<main className="Main">

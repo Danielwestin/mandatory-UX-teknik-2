@@ -22,13 +22,18 @@ export const initialState = {
 	score: 0,
 	questionIndex: 0,
 	trappedQuestion: 0,
-	gameOver: false
+	gameOver: false,
+	loading: true
 };
 
 export function reducer(state, action) {
 	switch (action.type) {
 		case 'questions':
-			return { ...state, questions: action.payload };
+			return {
+				...state,
+				questions: action.payload,
+				loading: true
+			};
 		case 'score':
 			if (state.gameOver) return state;
 			if (state.questionIndex === state.questions.length - 1) {

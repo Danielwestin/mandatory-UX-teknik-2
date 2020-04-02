@@ -4,7 +4,7 @@ export default function About() {
 	return (
 		<React.Fragment>
 			<section className="About">
-				<h1>ABOUT</h1>
+				<h1>ABOUT PIRATE IPSUM</h1>
 				<p>
 					Prow scuttle parrel provost Sail ho shrouds spirits boom
 					mizzenmast yardarm. Pinnace holystone mizzenmast quarter
@@ -21,6 +21,25 @@ export default function About() {
 					ballast Blimey lee snow crow's nest rutters. Fluke jib
 					scourge of the seven seas boatswain schooner gaff booty Jack
 					Tar transom spirits.
+				</p>
+
+				<h1>ABOUT CUPCAKE IPSUM</h1>
+				<p>
+					Cupcake ipsum dolor sit amet. Brownie candy canes liquorice
+					caramels pudding marzipan halvah. Sweet roll jelly-o dessert
+					liquorice muffin danish. Powder marzipan jelly halvah pie
+					lemon drops. Muffin marshmallow marzipan. Apple pie jelly-o
+					jujubes sweet candy canes sweet dragée. Pie topping soufflé
+					dessert chupa chups pudding. Candy toffee brownie sweet
+					wafer apple pie soufflé bear claw. Topping bear claw toffee
+					muffin. Chupa chups bear claw sweet roll wafer chocolate bar
+					croissant. Carrot cake apple pie liquorice cake ice cream
+					brownie. Wafer croissant jelly beans wafer icing gummi bears
+					gingerbread oat cake. Liquorice candy canes chupa chups
+					danish. Marzipan gummi bears cupcake chocolate cake powder
+					bear claw chupa chups ice cream. Chocolate bar dessert
+					cheesecake. Ice cream sesame snaps danish fruitcake cake
+					tart. Cake biscuit lollipop.
 				</p>
 			</section>
 		</React.Fragment>

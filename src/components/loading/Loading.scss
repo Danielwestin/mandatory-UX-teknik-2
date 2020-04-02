@@ -1,0 +1,10 @@
+.Loading {
+	display: flex;
+	&__ball {
+		width: 15px;
+		height: 15px;
+		background-color: #8c7b75;
+		margin: 5px;
+		border-radius: 50%;
+	}
+}
